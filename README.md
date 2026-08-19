@@ -5,13 +5,13 @@ The purpose of this code is to provide an option where Geant4 is not needed in o
 3. The energy spectra of the $\beta$-decay to be studied is uploaded to this repository
 4. The analysis is run
 
-### 1. Upload data files
+## 1. Upload data files
 Generate your own ROOT data files according to the instructions in *VITO-ISODLE*, or use one of the already uploaded files. 
 
-### 2. Upload spectral data
+## 2. Upload spectral data
 To study a specific decay, you need information about its energy distribution. I use information from *nds.iaea.org*->Livechart->Choose a nuclei->Decay Radiation->Beta Spectrum (Large plot with each transition). I them make a text file in the repository *energy_dist*, and copy the energy parameters into this file. In *Analysis.py*, you set the path to the file you wish to use. Note that the *iaea* data is in keV which is corrected for in *Analysis.py*. If you use some other energy distribution, you might need to correct for this. 
 
-### 3. Run the code 
+## 3. Run the code 
 In *Analysis.py*, you set the paths to the ROOT file, and energy distribution text file you wish to use.
 
 Make the code executable and run it as
