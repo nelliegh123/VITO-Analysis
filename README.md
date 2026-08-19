@@ -20,3 +20,19 @@ Make the code executable and run it as
    ./analysis.sh
 ```
 
+
+
+# Note on how to copy ROOT files
+There are different ways to get the ROOT-data files into the same repo as the analysis-code. From the simulation, I push mine to GitHub and then pull them into my working directory as
+```bash
+    cd data_files
+    mkdir temporary
+    cd temporary
+    git init
+    git remote add origin git@github.com:nelliegh123/Vito-ISOLDE.git
+    git sparse-checkout init --cone
+    git sparse-checkout set build/Results/Name_Of_Directoy_Or_File_You_Want
+    git pull --depth=1 origin main
+    cd ..
+    rm -rf temporary
+```
