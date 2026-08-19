@@ -8,5 +8,7 @@ obs keV
 
 ### 3. Run the code 
 Make the code executable and run it as
+
   `chmod +x analysis.sh`
+  
   `./analysis.sh`
