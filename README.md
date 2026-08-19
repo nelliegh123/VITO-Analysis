@@ -5,7 +5,13 @@ The purpose of this code is to provide an option where Geant4 is not needed in o
 Generate your own ROOT data files according to the instructions in *VITO-ISODLE*, or use one of the already uploaded files. In *Analysis.py*, you set the path to the file you wish to use.
 
 ## 2. Upload spectral data
-To study a specific decay, you need information about its energy distribution. I use information from *nds.iaea.org*->Livechart->Choose a nuclei->Decay Radiation->Beta Spectrum (Large plot with each transition). I them make a text file in the repository *energy_dist*, and copy the energy parameters into this file. In *Analysis.py*, you set the path to the file you wish to use. Note that the *iaea* data is in keV which is corrected for in *Analysis.py*. If you use some other energy distribution, you might need to correct for this. 
+To study a specific decay, you need information about its energy distribution. I use information from *nds.iaea.org*->Livechart->Choose a nuclei->Decay Radiation->Beta Spectrum (Large plot with each transition). I them make a text file in the repository *energy_dist*, and copy the energy parameters into this file. In *Analysis.py*, you set the path to the file you wish to use. Note that the *iaea* data is in keV which is corrected for in *Analysis.py*. If you use some other energy distribution, you need to modify the function $S(E)$ in *Analysis.py*:
+
+```python
+def S(E):
+    func = interp1d(E_data, dNdE_data, kind="cubic", bounds_error=False, fill_value=0.0)
+    return(func(E*1000))      #I take E*1000 since data is in keV
+```
 
 ## 3. Run the code 
 Make the code executable and run it as
