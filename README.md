@@ -23,7 +23,7 @@ Make the code executable and run it as
 # Note on how to copy ROOT files
 There are different ways to get the ROOT-data files into the same repo as the analysis-code. From the simulation, I push mine to GitHub and then pull them into my working directory as
 ```bash
-   cd data_files
+    cd data_files
     mkdir temporary
     cd temporary
     git init
