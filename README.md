@@ -33,7 +33,7 @@ Make the code executable and run it as
 
 
 # Note on how to copy ROOT files
-If you are able to, the easiest way to copy the files would just be to copy and paste. For me, this i snot possible, so from the simulation I push the files to GitHub and then pull them into my working directory as
+If you are able to, the easiest way to copy the files would just be to copy and paste. For me, this is not possible, so from the simulation I push the files to GitHub and then pull them into my working directory as
 ```bash
     cd data_files
     mkdir temporary
