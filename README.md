@@ -30,7 +30,8 @@ Make the code executable and run it as
    ./analysis.sh
 ```
 
-
+## DeVITO Analysis
+The code also includes the file _devitoAnalysis.py_. This is structured in the same way as the normal analysis-file, except it uses data where the magnetic field direction (and thus polarization) is reversed between runs. Editing the file follows the same structure as the normal analysis-file. 
 
 # Note on how to copy ROOT files
 If you are able to, the easiest way to copy the files would just be to copy and paste. For me, this is not possible, so from the simulation I push the files to GitHub and then pull them into my working directory as
