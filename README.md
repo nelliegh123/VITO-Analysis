@@ -11,7 +11,11 @@ This ROOT file contains all the hits registered in the front and rear detector i
 
 
 ## 2. Upload spectral data
-To study a specific decay, you need information about its energy distribution. I use information from *nds.iaea.org*->Livechart->Choose a nuclei->Decay Radiation->Beta Spectrum (Large plot with each transition). I them make a text file in the repository *energy_dist*, and copy the energy parameters into this file. In *Analysis.py*, you set the path to the file you wish to use. Note that the *iaea* data is in keV which is corrected for in *Analysis.py*. If you use some other energy distribution, you need to modify the function $S(E)$ in *Analysis.py*:
+To study a specific decay, you need information about its energy distribution. I use information from *nds.iaea.org*->Livechart->Choose a nuclei->Decay Radiation->Beta Spectrum (Large plot with each transition). I them make a text file in the repository *energy_dist*, and copy the energy parameters into this file. In *Analysis.py*, you set the path to the file you wish to use:
+```python
+    E_data, dNdE_data, _ = np.loadtxt("energy_dist/INSERT_YOUR_FILENAME_HERE", unpack=True)
+```
+Note that the *iaea* data is in keV which is corrected for in *Analysis.py*. If you use some other energy distribution, you need to modify the function $S(E)$ in *Analysis.py*:
 
 ```python
 def S(E):
