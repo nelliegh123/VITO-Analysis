@@ -3,6 +3,9 @@ The purpose of this code is to provide an option where Geant4 is not needed in o
 
 ## 1. Upload data files
 Generate your own ROOT data files according to the instructions in *VITO-ISODLE*, or use one of the already uploaded files. In *Analysis.py*, you set the path to the file you wish to use.
+```python
+f = ROOT.TFile("data_file/INSERT_YOUR_FILENAME_HERE/output.root")
+```
 
 The ROOT file contains all the hits registered in the front and rear detector in the columns "Energy", "Angle" and "Detector ID" (0 for front and 1 for rear). In the simulation, if an event runs for more than 1 second (usually because it gets stuck in the magnetic field), it is automatically killed. The ROOT file also contains information about the removed particles, stored in the columns _rmPos_, _rmPosY_, _rmPosZ_, _rmAngle_, and _rmEnergy_. 
 
