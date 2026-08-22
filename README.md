@@ -10,7 +10,7 @@ f = ROOT.TFile("data_file/INSERT_YOUR_FILENAME_HERE/output.root")
 This ROOT file contains all the hits registered in the front and rear detector in the columns _Energy_, _Angle_ and _Detector ID_ (0 for front and 1 for rear). In the simulation, if an event runs for more than 1 second (usually because it gets stuck in the magnetic field), it is automatically killed. The ROOT file stores information about the removed events in the columns _rmPosX_, _rmPosY_, _rmPosZ_, _rmAngle_, and _rmEnergy_. 
 
 
-## 2. Upload spectral data
+## 2. Upload Energy Distribution
 To study a specific decay, you need information about its energy distribution. I use information from *nds.iaea.org*->Livechart->Choose a nuclei->Decay Radiation->Beta Spectrum (Large plot with each transition). I them make a text file in the repository *energy_dist*, and copy the energy parameters into this file. In *Analysis.py*, you set the path to the file you wish to use:
 ```python
     E_data, dNdE_data, _ = np.loadtxt("energy_dist/INSERT_YOUR_FILENAME_HERE", unpack=True)
