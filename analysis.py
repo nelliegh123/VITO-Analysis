@@ -36,7 +36,7 @@ def W(E, theta, A, P):
         Angular distribution of beta decay.
     """
     vc = np.sqrt(1 - (0.511 / (E + 0.511))**2)
-    return 1 + vc * A * P * np.cos(np.radians(180 - theta))
+    return 1 + vc * A * P * np.cos(np.radians(theta))
 
 
 def S(E):
@@ -80,7 +80,7 @@ def asymmetry_np(E, theta, A, P):
     front, back = weight[det == 0], weight[det==1]
     NF = weight[det == 0].sum()
     NR = weight[det == 1].sum()
-    return (NF - NR) / (NF + NR), NF/NR, front, back
+    return (NF - NR) / (NF + NR), NF/NR, NF, NR
 
 
 
